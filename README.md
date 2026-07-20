@@ -35,3 +35,43 @@
 - Hỗ trợ kéo thả, tải file theo chunk, đồng bộ media
 
 ## 📁 Cấu trúc thư mục
+video-dubber-ai/
+├── backend/
+│   ├── app.py
+│   ├── config.py
+│   ├── requirements.txt
+│   ├── services/
+│   ├── utils/
+│   └── ...
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+├── uploads/
+├── outputs/
+├── temp/
+└── README.md
+## 🚀 Hướng dẫn cài đặt & chạy
+
+### 1. Chuẩn bị môi trường
+
+```bash
+# Clone project
+git clone <your-repo-url>
+cd video-dubber-ai
+
+# Cài FFmpeg (bắt buộc)
+# Ubuntu/Debian
+sudo apt install ffmpeg
+
+# macOS
+brew install ffmpeg
+
+# Windows
+winget install ffmpeg
+cd backend
+pip install -r requirements.txt
+
+python -m uvicorn backend.app:app --reload --host 0.0.0.0 --port 8000
+cd frontend
+python -m http.server 3000
